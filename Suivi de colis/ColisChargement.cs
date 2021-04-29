@@ -49,6 +49,24 @@ namespace Suivi_de_colis
                 listeColisACharger.Add(new Colis(colisId));
                 //normalement colisACharger.Add(ColisDAO.chercher(colisId));
             }
+            
+            CamionDAO CDAO = new CamionDAO();
+            Dictionary<string, object> D = new Dictionary<string, object>();
+            List<Camion> listeCamions;
+            D.Add("Marque", "BMW");
+            listeCamions = CDAO.Selectionner(D);
+            if (listeCamions != null)
+            {
+                foreach (Camion C in listeCamions)
+                {
+                    MessageBox.Show(C.Modele);
+                }
+            }
+
+            //CDAO.Supprimer("2");
+            //CDAO.Selectionner().Marque
+            CDAO.Ajouter(new Camion("2", "9CEA", "RENAULT", "X22", 25, 30, 10, 100, 5, 60));
+            
             this.Close();
         }
     }

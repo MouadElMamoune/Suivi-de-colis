@@ -8,52 +8,57 @@ namespace Suivi_de_colis
 {
     class Destination
     {
-            string id;
-            string addresse_postale;
-            string coordonnees_GPS;
-            public Destination(string id ,string addresse_postale ,string coordonnees_GPS)
+        string id;
+        string adresse_postale;
+        string coordonnees_GPS;
+        public Destination(string id ,string addresse_postale ,string coordonnees_GPS)
+        {
+            this.id = id;
+            this.adresse_postale = addresse_postale;
+            this.coordonnees_GPS = coordonnees_GPS;
+        }
+
+        public Destination()
+        {
+
+        }
+
+        public string ID
+        {
+            get
             {
-                this.id = id;
-                this.addresse_postale = addresse_postale;
-                this.coordonnees_GPS = coordonnees_GPS;
+                return id;
             }
 
-            public string ID
+            set
             {
-                get
-                {
-                    return id;
-                }
-
-                set
-                {
-                    id = value;
-                }
+                id = value;
             }
-            public string Addresse_postale
+        }
+        public string Adresse_postale
+        {
+            get
             {
-                get
-                {
-                    return addresse_postale;
-                }
-
-                set
-                {
-                    addresse_postale = value;
-                }
+                return adresse_postale;
             }
-            public string Coordonnees_GPS
+
+            set
             {
-                get
-                {
-                    return coordonnees_GPS;
-                }
-
-                set
-                {
-                    coordonnees_GPS = value;
-                }
+                adresse_postale = value;
             }
+        }
+        public string Coordonnees_GPS
+        {
+            get
+            {
+                return coordonnees_GPS;
+            }
+
+            set
+            {
+                coordonnees_GPS = value;
+            }
+        }
             
     }
 }

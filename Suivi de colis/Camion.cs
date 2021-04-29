@@ -32,6 +32,11 @@ namespace Suivi_de_colis
                 this.poids_max = poids_max;
             }
 
+            public Camion()
+        {
+
+        }
+
             public string ID
             {
                 get

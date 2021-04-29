@@ -13,9 +13,32 @@ namespace Suivi_de_colis
     public partial class PlanificationLivraison : Form
     {
         List<Colis> listeColisACharger = new List<Colis>();
+        List<Destination> trajet = new List<Destination>();
+        List<Camion> listeCamions;
+        List<Destination> listeDestinations;
         public PlanificationLivraison()
         {
+            CamionDAO CDAO = new CamionDAO();
+            DestinationDAO DDAO = new DestinationDAO();
+            listeCamions = CDAO.Selectionner();
+            listeDestinations = DDAO.Selectionner();
         InitializeComponent();
+            foreach (Camion C in listeCamions) 
+            {
+                CamionPLcomboBox.Items.Add(C.ID);
+            }
+            foreach (Destination D in listeDestinations)
+            {
+                LieuChargementPLcomboBox.Items.Add(D.Adresse_postale);
+            }
+            /*
+            DestinationDAO DDAO = new DestinationDAO();
+            DDAO.Ajouter(new Destination("1", "Rue Moulay Driss", "298° 14°"));
+            DDAO.Ajouter(new Destination("2", "Hassnouna", "240° 23°"));
+            DDAO.Ajouter(new Destination("3", "Marshane", "301° 19°"));
+            DDAO.Ajouter(new Destination("4", "Iberia", "185° 17°"));
+            */
+
         }
 
         private void ColisPLbutton_Click(object sender, EventArgs e)
@@ -34,7 +57,35 @@ namespace Suivi_de_colis
         }
 
         private void CamionPLcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {      
+        }
+
+        private void DestinationPLbutton_Click(object sender, EventArgs e)
         {
+            if (NbDestinationPLnumericUpDown.Value > 0)
+            {
+                DestinationDesignation DD = new DestinationDesignation(Convert.ToInt32(NbDestinationPLnumericUpDown.Value));
+                TrajetPLdataGridView.Rows.Clear();
+                DD.ShowDialog();
+                trajet = DD.trajet;
+                if (trajet.Count != 0)
+                {
+                    foreach (Destination D in trajet)
+                    {
+                        TrajetPLdataGridView.Rows.Add(D.ID);
+                    }
+                }
+            }
+        }
+
+        private void NbDestinationPLnumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TrajetPLdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

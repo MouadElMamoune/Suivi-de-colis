@@ -22,5 +22,11 @@ namespace Suivi_de_colis
             PlanificationLivraison PL = new PlanificationLivraison();
             PL.ShowDialog();
         }
+
+        private void SuiviActuelbutton_Click(object sender, EventArgs e)
+        {
+            ValidationDeplacement VD = new ValidationDeplacement();
+            VD.ShowDialog();
+        }
     }
 }
