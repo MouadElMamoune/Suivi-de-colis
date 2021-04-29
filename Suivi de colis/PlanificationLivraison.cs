@@ -13,6 +13,7 @@ namespace Suivi_de_colis
     public partial class PlanificationLivraison : Form
     {
         List<Colis> listeColisACharger = new List<Colis>();
+        List<Destination> trajet = new List<Destination>();
         public PlanificationLivraison()
         {
         InitializeComponent();
@@ -34,7 +35,35 @@ namespace Suivi_de_colis
         }
 
         private void CamionPLcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {      
+        }
+
+        private void DestinationPLbutton_Click(object sender, EventArgs e)
         {
+            if (NbDestinationPLnumericUpDown.Value > 0)
+            {
+                DestinationDesignation DD = new DestinationDesignation(Convert.ToInt32(NbDestinationPLnumericUpDown.Value));
+                TrajetPLdataGridView.Rows.Clear();
+                DD.ShowDialog();
+                trajet = DD.trajet;
+                if (trajet.Count != 0)
+                {
+                    foreach (Destination D in trajet)
+                    {
+                        TrajetPLdataGridView.Rows.Add(D.ID);
+                    }
+                }
+            }
+        }
+
+        private void NbDestinationPLnumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TrajetPLdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

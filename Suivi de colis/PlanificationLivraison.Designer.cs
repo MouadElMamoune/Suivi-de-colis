@@ -32,21 +32,29 @@ namespace Suivi_de_colis
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CamionPLcomboBox = new System.Windows.Forms.ComboBox();
             this.CamionPLlabel = new System.Windows.Forms.Label();
             this.LieuChargementPLlabel = new System.Windows.Forms.Label();
             this.LieuChargementPLcomboBox = new System.Windows.Forms.ComboBox();
             this.ColisPLlabel = new System.Windows.Forms.Label();
             this.NbDestinationPLlabel = new System.Windows.Forms.Label();
-            this.NbDestinationPLtextBox = new System.Windows.Forms.TextBox();
             this.ColisPLbutton = new System.Windows.Forms.Button();
             this.DestinationPLbutton = new System.Windows.Forms.Button();
             this.DestinationPLlabel = new System.Windows.Forms.Label();
             this.ValiderPLbutton = new System.Windows.Forms.Button();
             this.ColisChargePLdataGridView = new System.Windows.Forms.DataGridView();
-            this.ColisChargePLlabel = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColisChargePLlabel = new System.Windows.Forms.Label();
+            this.NbDestinationPLnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.TrajetPLlabel = new System.Windows.Forms.Label();
+            this.TrajetPLdataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ColisChargePLdataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NbDestinationPLnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrajetPLdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // CamionPLcomboBox
@@ -108,14 +116,6 @@ namespace Suivi_de_colis
             this.NbDestinationPLlabel.TabIndex = 5;
             this.NbDestinationPLlabel.Text = "Nombre de destinations";
             // 
-            // NbDestinationPLtextBox
-            // 
-            this.NbDestinationPLtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NbDestinationPLtextBox.Location = new System.Drawing.Point(322, 166);
-            this.NbDestinationPLtextBox.Name = "NbDestinationPLtextBox";
-            this.NbDestinationPLtextBox.Size = new System.Drawing.Size(180, 31);
-            this.NbDestinationPLtextBox.TabIndex = 6;
-            // 
             // ColisPLbutton
             // 
             this.ColisPLbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,6 +136,7 @@ namespace Suivi_de_colis
             this.DestinationPLbutton.TabIndex = 9;
             this.DestinationPLbutton.Text = "Définir";
             this.DestinationPLbutton.UseVisualStyleBackColor = true;
+            this.DestinationPLbutton.Click += new System.EventHandler(this.DestinationPLbutton_Click);
             // 
             // DestinationPLlabel
             // 
@@ -202,6 +203,12 @@ namespace Suivi_de_colis
             this.ColisChargePLdataGridView.TabIndex = 11;
             this.ColisChargePLdataGridView.TabStop = false;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "id";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // ColisChargePLlabel
             // 
             this.ColisChargePLlabel.AutoSize = true;
@@ -212,24 +219,91 @@ namespace Suivi_de_colis
             this.ColisChargePLlabel.TabIndex = 12;
             this.ColisChargePLlabel.Text = "Colis en caisse";
             // 
-            // Column1
+            // NbDestinationPLnumericUpDown
             // 
-            this.Column1.HeaderText = "id";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.NbDestinationPLnumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NbDestinationPLnumericUpDown.Location = new System.Drawing.Point(322, 164);
+            this.NbDestinationPLnumericUpDown.Name = "NbDestinationPLnumericUpDown";
+            this.NbDestinationPLnumericUpDown.Size = new System.Drawing.Size(180, 31);
+            this.NbDestinationPLnumericUpDown.TabIndex = 13;
+            this.NbDestinationPLnumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NbDestinationPLnumericUpDown.ValueChanged += new System.EventHandler(this.NbDestinationPLnumericUpDown_ValueChanged);
+            // 
+            // TrajetPLlabel
+            // 
+            this.TrajetPLlabel.AutoSize = true;
+            this.TrajetPLlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrajetPLlabel.Location = new System.Drawing.Point(615, 240);
+            this.TrajetPLlabel.Name = "TrajetPLlabel";
+            this.TrajetPLlabel.Size = new System.Drawing.Size(67, 25);
+            this.TrajetPLlabel.TabIndex = 15;
+            this.TrajetPLlabel.Text = "Trajet";
+            // 
+            // TrajetPLdataGridView
+            // 
+            this.TrajetPLdataGridView.AllowUserToAddRows = false;
+            this.TrajetPLdataGridView.AllowUserToDeleteRows = false;
+            this.TrajetPLdataGridView.AllowUserToResizeColumns = false;
+            this.TrajetPLdataGridView.AllowUserToResizeRows = false;
+            this.TrajetPLdataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TrajetPLdataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.TrajetPLdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TrajetPLdataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TrajetPLdataGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            this.TrajetPLdataGridView.Location = new System.Drawing.Point(537, 278);
+            this.TrajetPLdataGridView.MultiSelect = false;
+            this.TrajetPLdataGridView.Name = "TrajetPLdataGridView";
+            this.TrajetPLdataGridView.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TrajetPLdataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.TrajetPLdataGridView.RowHeadersVisible = false;
+            this.TrajetPLdataGridView.Size = new System.Drawing.Size(240, 150);
+            this.TrajetPLdataGridView.TabIndex = 14;
+            this.TrajetPLdataGridView.TabStop = false;
+            this.TrajetPLdataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TrajetPLdataGridView_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // PlanificationLivraison
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TrajetPLlabel);
+            this.Controls.Add(this.TrajetPLdataGridView);
+            this.Controls.Add(this.NbDestinationPLnumericUpDown);
             this.Controls.Add(this.ColisChargePLlabel);
             this.Controls.Add(this.ColisChargePLdataGridView);
             this.Controls.Add(this.ValiderPLbutton);
             this.Controls.Add(this.DestinationPLbutton);
             this.Controls.Add(this.DestinationPLlabel);
             this.Controls.Add(this.ColisPLbutton);
-            this.Controls.Add(this.NbDestinationPLtextBox);
             this.Controls.Add(this.NbDestinationPLlabel);
             this.Controls.Add(this.ColisPLlabel);
             this.Controls.Add(this.LieuChargementPLcomboBox);
@@ -240,6 +314,8 @@ namespace Suivi_de_colis
             this.Name = "PlanificationLivraison";
             this.Text = "Planification de livraison";
             ((System.ComponentModel.ISupportInitialize)(this.ColisChargePLdataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NbDestinationPLnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrajetPLdataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,7 +329,6 @@ namespace Suivi_de_colis
         private System.Windows.Forms.ComboBox LieuChargementPLcomboBox;
         private System.Windows.Forms.Label ColisPLlabel;
         private System.Windows.Forms.Label NbDestinationPLlabel;
-        private System.Windows.Forms.TextBox NbDestinationPLtextBox;
         private System.Windows.Forms.Button ColisPLbutton;
         private System.Windows.Forms.Button DestinationPLbutton;
         private System.Windows.Forms.Label DestinationPLlabel;
@@ -261,5 +336,9 @@ namespace Suivi_de_colis
         private System.Windows.Forms.DataGridView ColisChargePLdataGridView;
         private System.Windows.Forms.Label ColisChargePLlabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.NumericUpDown NbDestinationPLnumericUpDown;
+        private System.Windows.Forms.Label TrajetPLlabel;
+        private System.Windows.Forms.DataGridView TrajetPLdataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }
