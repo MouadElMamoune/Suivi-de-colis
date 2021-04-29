@@ -13,7 +13,7 @@ namespace Suivi_de_colis
             float hauteur;
             float largeur;
             bool fragilite
-            public Camion(string id ,float longueur ,float hauteur, float largeur, bool fragilite)
+            public Colis(string id ,float longueur ,float hauteur, float largeur, bool fragilite)
             {
                 this.id = id;
                 this.longueur = longueur;
