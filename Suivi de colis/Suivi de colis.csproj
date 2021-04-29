@@ -125,11 +125,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camion.cs" />
+    <Compile Include="Chauffeur.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="Colis.cs" />
     <Compile Include="ColisChargement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ColisChargement.Designer.cs">
       <DependentUpon>ColisChargement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Deplacement.cs" />
+    <Compile Include="Destination.cs" />
+    <Compile Include="DestinationDesignation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DestinationDesignation.Designer.cs">
+      <DependentUpon>DestinationDesignation.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -137,6 +149,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="PlanificationLivraison.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,9 +159,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
     <EmbeddedResource Include="ColisChargement.resx">
       <DependentUpon>ColisChargement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\Suivi_de_colis.ColisChargement.resources" />
+    <EmbeddedResource Include="obj\Debug\Suivi_de_colis.PlanificationLivraison.resources" />
+    <EmbeddedResource Include="obj\Debug\Suivi_de_colis.Properties.Resources.resources" />
     <EmbeddedResource Include="PlanificationLivraison.resx">
       <DependentUpon>PlanificationLivraison.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +181,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="bin\Debug\Suivi de colis.exe.config" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\Suivi de colis.csproj.CopyComplete" />
+    <None Include="obj\Debug\Suivi de colis.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\Suivi de colis.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\Suivi de colis.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -173,6 +201,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Neo4j.Driver.dll" />
+    <Content Include="bin\Debug\Neo4j.Driver.xml" />
+    <Content Include="bin\Debug\Neo4jClient.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
+    <Content Include="bin\Debug\Suivi de colis.exe" />
+    <Content Include="bin\Debug\Suivi de colis.pdb" />
+    <Content Include="bin\Debug\System.ComponentModel.Annotations.dll" />
+    <Content Include="bin\Debug\System.ValueTuple.dll" />
+    <Content Include="bin\Debug\System.ValueTuple.xml" />
+    <Content Include="obj\Debug\Suivi de colis.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Suivi de colis.exe" />
+    <Content Include="obj\Debug\Suivi de colis.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

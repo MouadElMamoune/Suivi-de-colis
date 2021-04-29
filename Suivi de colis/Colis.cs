@@ -12,8 +12,8 @@ namespace Suivi_de_colis
             float longueur;
             float hauteur;
             float largeur;
-            bool fragilite
-            public Colis(string id ,float longueur ,float hauteur, float largeur, bool fragilite)
+            bool fragilite;
+            public Colis(string id ,float longueur = 0,float hauteur = 0, float largeur = 0, bool fragilite = false)
             {
                 this.id = id;
                 this.longueur = longueur;
@@ -71,7 +71,7 @@ namespace Suivi_de_colis
                     largeur = value;
                 }
             }
-            public float Fragilite
+            public bool Fragilite
             {
                 get
                 {

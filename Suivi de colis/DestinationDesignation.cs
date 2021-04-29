@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Suivi_de_colis
 {
-    public partial class Form1 : Form
+    public partial class DestinationDesignation : Form
     {
-        public Form1()
+        public DestinationDesignation()
         {
             InitializeComponent();
-        }
-
-        private void PlanifierLivraisonbutton_Click(object sender, EventArgs e)
-        {
-            PlanificationLivraison PL = new PlanificationLivraison();
-            PL.ShowDialog();
         }
     }
 }
