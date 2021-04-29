@@ -14,7 +14,7 @@ namespace Suivi_de_colis
             string date_embauche;
             float salaire;
             float note;
-            public Camion(string id, string nom, string prenom, string date_embauche, float salaire, float note)
+            public Chauffeur(string id, string nom, string prenom, string date_embauche, float salaire, float note)
             {
                 this.id = id;
                 this.nom = nom;
