@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Suivi_de_colis
+{
+    class Destination
+    {
+            string id;
+            string addresse_postale;
+            string coordonnees_GPS;
+            public Destination(string id ,string addresse_postale ,string coordonnees_GPS)
+            {
+                this.id = id;
+                this.addresse_postale = addresse_postale;
+                this.coordonnees_GPS = coordonnees_GPS;
+            }
+
+            public string ID
+            {
+                get
+                {
+                    return id;
+                }
+
+                set
+                {
+                    id = value;
+                }
+            }
+            public string Addresse_postale
+            {
+                get
+                {
+                    return addresse_postale;
+                }
+
+                set
+                {
+                    addresse_postale = value;
+                }
+            }
+            public string Coordonnees_GPS
+            {
+                get
+                {
+                    return coordonnees_GPS;
+                }
+
+                set
+                {
+                    coordonnees_GPS = value;
+                }
+            }
+            
+    }
+}
