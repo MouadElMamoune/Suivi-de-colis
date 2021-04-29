@@ -31,7 +31,7 @@ namespace Suivi_de_colis
                     id = value;
                 }
             }
-            /*
+            
             bool Connecte()
             {
                 while (compteur < 10)
@@ -40,6 +40,6 @@ namespace Suivi_de_colis
                 }
                 return (compteur < 10)
             }    
-            */
+            
     }
 }
