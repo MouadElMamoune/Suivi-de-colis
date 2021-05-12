@@ -166,6 +166,7 @@
     </Compile>
     <Compile Include="DAO.cs" />
     <Compile Include="Deplacement.cs" />
+    <Compile Include="DeplacementDAO.cs" />
     <Compile Include="Destination.cs" />
     <Compile Include="DestinationDAO.cs" />
     <Compile Include="DestinationDesignation.cs">

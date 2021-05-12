@@ -59,6 +59,7 @@ namespace Suivi_de_colis
             // 
             // CamionPLcomboBox
             // 
+            this.CamionPLcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CamionPLcomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CamionPLcomboBox.FormattingEnabled = true;
             this.CamionPLcomboBox.Location = new System.Drawing.Point(322, 32);
@@ -89,6 +90,7 @@ namespace Suivi_de_colis
             // 
             // LieuChargementPLcomboBox
             // 
+            this.LieuChargementPLcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.LieuChargementPLcomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LieuChargementPLcomboBox.FormattingEnabled = true;
             this.LieuChargementPLcomboBox.Location = new System.Drawing.Point(322, 72);

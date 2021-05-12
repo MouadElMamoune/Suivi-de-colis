@@ -51,21 +51,16 @@ namespace Suivi_de_colis
             }
             
             CamionDAO CDAO = new CamionDAO();
-            Dictionary<string, object> D = new Dictionary<string, object>();
-            List<Camion> listeCamions;
-            D.Add("Marque", "BMW");
-            listeCamions = CDAO.Selectionner(D);
-            if (listeCamions != null)
-            {
-                foreach (Camion C in listeCamions)
-                {
-                    MessageBox.Show(C.Modele);
-                }
-            }
+            DestinationDAO DDAO = new DestinationDAO();
+            DeplacementDAO DEPDAO = new DeplacementDAO();
+            //DEPDAO.Ajouter(new Deplacement("1", "01/01/2021 17:30", "01/01/2021 18:30"), CDAO.Selectionner("2"), , DDAO.Selectionner("2"), DDAO.Selectionner("3"));
+            //CDAO.SeDeplacer(CDAO.Selectionner("1"), DDAO.Selectionner("1"), DDAO.Selectionner("2"));
+            DEPDAO.Supprimer(new Deplacement("1", "", ""), CDAO.Selectionner("2"),  DDAO.Selectionner("2"), DDAO.Selectionner("3"));
+
 
             //CDAO.Supprimer("2");
             //CDAO.Selectionner().Marque
-            CDAO.Ajouter(new Camion("2", "9CEA", "RENAULT", "X22", 25, 30, 10, 100, 5, 60));
+            //CDAO.Ajouter(new Camion("2", "9CEA", "RENAULT", "X22", 25, 30, 10, 100, 5, 60));
             
             this.Close();
         }

@@ -10,12 +10,12 @@ namespace Suivi_de_colis
     {
             string id;
             string date_de_depart;
-            string date_de_arrive;
+            string date_arrive;
             public Deplacement(string id ,string date_de_depart ,string date_de_arrive)
             {
                 this.id = id;
                 this.date_de_depart = date_de_depart;
-                this.date_de_arrive = date_de_arrive;
+                this.date_arrive = date_de_arrive;
             }
 
             public string ID
@@ -42,16 +42,16 @@ namespace Suivi_de_colis
                     date_de_depart = value;
                 }
             }
-            public string Date_de_arrive
+            public string Date_arrive
             {
                 get
                 {
-                    return date_de_arrive;
+                    return date_arrive;
                 }
 
                 set
                 {
-                    date_de_arrive = value;
+                    date_arrive = value;
                 }
             }
             

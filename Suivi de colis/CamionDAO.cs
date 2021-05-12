@@ -178,7 +178,7 @@ namespace Suivi_de_colis
 
         public void Supprimer(string id)
         {
-            var camion = client.Cypher.Match("(c:" + "Camion)").Where("c.ID = '" + id + "'").Delete("c").ExecuteWithoutResultsAsync();
+            var camion = client.Cypher.Match("(c:Camion)").Where("c.ID = '" + id + "'").Delete("c").ExecuteWithoutResultsAsync();
             camion.Wait();
         }
 
