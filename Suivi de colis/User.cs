@@ -31,6 +31,30 @@ namespace Suivi_de_colis
                     id = value;
                 }
             }
+            public string Login
+            {
+                get
+                {
+                    return login;
+                }
+
+                set
+                {
+                    login = value;
+                }
+            }
+            public string Password
+            {
+                get
+                {
+                    return password;
+                }
+
+                set
+                {
+                    password = value;
+                }
+            }
             /*
             bool Connecte()
             {
