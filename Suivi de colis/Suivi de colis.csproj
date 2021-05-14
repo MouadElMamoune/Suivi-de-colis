@@ -156,7 +156,9 @@
     <Compile Include="Camion.cs" />
     <Compile Include="CamionDAO.cs" />
     <Compile Include="Chauffeur.cs" />
+    <Compile Include="ChauffeurDAO.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="ClientDAO.cs" />
     <Compile Include="Colis.cs" />
     <Compile Include="ColisChargement.cs">
       <SubType>Form</SubType>
@@ -164,6 +166,7 @@
     <Compile Include="ColisChargement.Designer.cs">
       <DependentUpon>ColisChargement.cs</DependentUpon>
     </Compile>
+    <Compile Include="ColisDAO.cs" />
     <Compile Include="DAO.cs" />
     <Compile Include="Deplacement.cs" />
     <Compile Include="DeplacementDAO.cs" />
@@ -193,6 +196,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserDAO.cs" />
     <Compile Include="ValidationDeplacement.cs">
       <SubType>Form</SubType>
     </Compile>

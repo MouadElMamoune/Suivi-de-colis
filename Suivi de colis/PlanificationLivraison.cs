@@ -3,79 +3,86 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Suivi_de_colis
 {
     public partial class PlanificationLivraison : Form
     {
-        List<Colis> listeColisACharger = new List<Colis>();
-        List<Destination> trajet = new List<Destination>();
         List<Camion> listeCamions;
-        List<Destination> listeDestinations;
+        List<string>[] listeColisACharger;
+        List<string>[] listeColisADecharger;
+        string[] listeDestinations;
+        string idCamion;
+        int nbDestinations;
+        XDocument doc;
         public PlanificationLivraison()
         {
             CamionDAO CDAO = new CamionDAO();
             DestinationDAO DDAO = new DestinationDAO();
             listeCamions = CDAO.Selectionner();
-            listeDestinations = DDAO.Selectionner();
-        InitializeComponent();
+            if (File.Exists(@"../../test.xml"))
+            {
+                doc = XDocument.Load(@"../../test.xml");
+            } 
+            InitializeComponent();
             foreach (Camion C in listeCamions) 
             {
                 CamionPLcomboBox.Items.Add(C.ID);
             }
-            foreach (Destination D in listeDestinations)
-            {
-                LieuChargementPLcomboBox.Items.Add(D.Adresse_postale);
-            }
-            /*
-            DestinationDAO DDAO = new DestinationDAO();
-            DDAO.Ajouter(new Destination("1", "Rue Moulay Driss", "298° 14°"));
-            DDAO.Ajouter(new Destination("2", "Hassnouna", "240° 23°"));
-            DDAO.Ajouter(new Destination("3", "Marshane", "301° 19°"));
-            DDAO.Ajouter(new Destination("4", "Iberia", "185° 17°"));
-            */
-
         }
 
-        private void ColisPLbutton_Click(object sender, EventArgs e)
+        private void TrajetPLbutton_Click(object sender, EventArgs e)
         {
-            ColisChargement CC = new ColisChargement();
-            CC.ShowDialog();
-            listeColisACharger = CC.listeColisACharger;
-            ColisChargePLdataGridView.Rows.Clear();
-            if (listeColisACharger.Count != 0)
+            string idCam;
+            if (CamionPLcomboBox.Text != "" && NbDestinationPLnumericUpDown.Value > 0)
             {
-                foreach (Colis C in listeColisACharger)
+                idCam = CamionPLcomboBox.Text;
+                if (File.Exists(@"../../test.xml"))
                 {
-                    ColisChargePLdataGridView.Rows.Add(C.ID);
+                    var livraison = (from x in doc.Root.Elements("livraison") where x.Attribute("idCamion").Value == idCam select x).FirstOrDefault();
+                    if (livraison == null)
+                    {
+                        ColisChargement CC = new ColisChargement(idCam, Convert.ToInt32(NbDestinationPLnumericUpDown.Value));
+                        CC.ShowDialog();
+                        TrajetPLdataGridView.Rows.Clear();
+                        listeDestinations = CC.ListeDestination;
+                        listeColisACharger = CC.ListeColisACharger;
+                        listeColisADecharger = CC.ListeColisADecharger;
+                        idCamion = CC.IdCamion;
+                        nbDestinations = CC.NbDestinations;
+                        foreach (var x in CC.ListeDestination)
+                        {
+                            TrajetPLdataGridView.Rows.Add(x);
+                        }
+                    }
                 }
-            }
+                else
+                {
+                    ColisChargement CC = new ColisChargement(idCam, Convert.ToInt32(NbDestinationPLnumericUpDown.Value));
+                    CC.ShowDialog();
+                    TrajetPLdataGridView.Rows.Clear();
+                    listeDestinations = CC.ListeDestination;
+                    listeColisACharger = CC.ListeColisACharger;
+                    listeColisADecharger = CC.ListeColisADecharger;
+                    idCamion = CC.IdCamion;
+                    nbDestinations = CC.NbDestinations;
+                    foreach (var x in CC.ListeDestination)
+                    {
+                        TrajetPLdataGridView.Rows.Add(x);
+                    }
+                }
+            }            
         }
 
         private void CamionPLcomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {      
-        }
-
-        private void DestinationPLbutton_Click(object sender, EventArgs e)
-        {
-            if (NbDestinationPLnumericUpDown.Value > 0)
-            {
-                DestinationDesignation DD = new DestinationDesignation(Convert.ToInt32(NbDestinationPLnumericUpDown.Value));
-                TrajetPLdataGridView.Rows.Clear();
-                DD.ShowDialog();
-                trajet = DD.trajet;
-                if (trajet.Count != 0)
-                {
-                    foreach (Destination D in trajet)
-                    {
-                        TrajetPLdataGridView.Rows.Add(D.ID);
-                    }
-                }
-            }
+        {   
+            
         }
 
         private void NbDestinationPLnumericUpDown_ValueChanged(object sender, EventArgs e)
@@ -86,6 +93,42 @@ namespace Suivi_de_colis
         private void TrajetPLdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void ValiderPLbutton_Click(object sender, EventArgs e)
+        {
+            if (TrajetPLdataGridView.Rows.Count != 0 || true)
+            {
+                if (!File.Exists(@"../../test.xml"))
+                {
+                    doc = new XDocument(new XElement("livraisons"));
+                }
+                doc.Root.Add(new XElement("livraison", new XAttribute("idCamion", idCamion), new XAttribute("nbDestinations", nbDestinations)));
+                var livraison = (from x in doc.Root.Elements("livraison") where x.Attribute("idCamion").Value == idCamion select x).FirstOrDefault();
+                int i = 1;
+                foreach (var destination in listeDestinations)
+                {
+                    if (i-1 < nbDestinations)
+                    {
+                        livraison.Add(new XElement("destination", new XAttribute("num", i), new XAttribute("adressePostale", destination), new XElement("camion"), new XElement("emplacement")));
+                        var destCharger = (from x in livraison.Elements("destination") where x.Attribute("num").Value == i.ToString() select x).FirstOrDefault();
+                        var destDecharger = (from x in livraison.Elements("destination") where x.Attribute("num").Value == i.ToString() select x).FirstOrDefault();
+
+                        foreach (var colis in listeColisACharger[i - 1])
+                        {
+                            destCharger.Element("emplacement").Add(new XElement("colis", colis));
+                        }
+                        
+                        foreach (var colis in listeColisADecharger[i - 1])
+                        {
+                            destCharger.Element("camion").Add(new XElement("colis", colis));
+                        }
+                        i++;         
+                    }
+                }
+                doc.Save(@"../../test.xml");
+                TrajetPLdataGridView.Rows.Clear();
+            }    
         }
     }
 }

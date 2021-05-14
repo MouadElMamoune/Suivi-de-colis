@@ -33,21 +33,21 @@ namespace Suivi_de_colis
         {
             Chauffeur C = null;
 
-            var camion = client.Cypher.Match("(c:Camion)").Where("c.ID = '" + id + "'").Return<Camion>("c").ResultsAsync; 
-            camion.Wait();
-            foreach (var x in camion.Result.ToList())
+            var chauffeur = client.Cypher.Match("(c:Chauffeur)").Where("c.ID = '" + id + "'").Return<Chauffeur>("c").ResultsAsync; 
+            chauffeur.Wait();
+            foreach (var x in chauffeur.Result.ToList())
             {
-                C = new Camion(x.ID, x.Matricule, x.Marque, x.Modele, x.Poids, x.Consommation, x.Longueur, x.Hauteur, x.Largeur, x.Poids_max);
+                C = new Chauffeur(x.ID, x.Nom, x.Prenom, x.Date_embauche, x.Salaire, x.Note);
                 return C;
             }         
             return C;
         }
 
-        public List<Camion> Selectionner(Dictionary<string, object> D = null)
+        public List<Chauffeur> Selectionner(Dictionary<string, object> D = null)
         {
             int compteur = 0;
-            string requete = "(c:" + "Camion) ";
-            Task<IEnumerable<Camion>> camions;
+            string requete = "(c:Chauffeur) ";
+            Task<IEnumerable<Chauffeur>> chauffeurs;
             if (D != null)
             {
                 if (D.ContainsKey("ID"))

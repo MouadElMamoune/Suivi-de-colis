@@ -35,7 +35,7 @@ namespace Suivi_de_colis
 
             var colis = client.Cypher.Match("(c:Colis)").Where("c.ID = '" + id + "'").Return<Colis>("c").ResultsAsync; 
             colis.Wait();
-            foreach (var x in camion.Result.ToList())
+            foreach (var x in colis.Result.ToList())
             {
                 C = new Colis(x.ID, x.Longueur, x.Hauteur, x.Largeur, x.Fragilite);
                 return C;
@@ -47,7 +47,7 @@ namespace Suivi_de_colis
         {
             int compteur = 0;
             string requete = "(c:" + "Colis) ";
-            Task<IEnumerable<Camion>> coliss;
+            Task<IEnumerable<Colis>> colis;
             if (D != null)
             {
                 if (D.ContainsKey("ID"))
@@ -104,15 +104,68 @@ namespace Suivi_de_colis
                     }
                 }
             }
-            coliss = client.Cypher.Match(requete).Return<Colis>("c").ResultsAsync;
-            coliss.Wait();
-            return coliss.Result.ToList();
+            colis = client.Cypher.Match(requete).Return<Colis>("c").ResultsAsync;
+            colis.Wait();
+            return colis.Result.ToList();
         }
 
         public void Supprimer(string id)
         {
+            SupprimerEmplacement(id);
             var colis = client.Cypher.Match("(c:Colis)").Where("c.ID = '" + id + "'").Delete("c").ExecuteWithoutResultsAsync();
             colis.Wait();
+        }
+
+        public void AjouterEmplacement(Colis C, Destination S)
+        {
+            SupprimerEmplacement(C);
+            var requete = client.Cypher.Match("(c:Colis)", "(s:Destination)").Where("c.ID = '" + C.ID + "'").AndWhere("s.ID = '" + S.ID + "'").Create("(s)-[:contient]->(c)").ExecuteWithoutResultsAsync();
+            requete.Wait();
+        }
+
+        public void AjouterEmplacement(Colis col, Camion cam)
+        {
+            SupprimerEmplacement(col);
+            var requete = client.Cypher.Match("(col:Colis)", "(cam:Camion)").Where("col.ID = '" + col.ID + "'").AndWhere("cam.ID = '" + cam.ID + "'").Create("(cam)-[:transporte]->(col)").ExecuteWithoutResultsAsync();
+            requete.Wait();
+        }
+
+        public void SupprimerEmplacement(Colis C)
+        {
+            var requete = client.Cypher.Match("()-[cont:contient]->(c:Colis)").Where("c.ID = '" + C.ID + "'").Delete("cont").ExecuteWithoutResultsAsync();
+            requete.Wait();
+            requete = client.Cypher.Match("()-[trans:transporte]->(c:Colis)").Where("c.ID = '" + C.ID + "'").Delete("trans").ExecuteWithoutResultsAsync();
+            requete.Wait();
+        }
+
+        public void SupprimerEmplacement(string id)
+        {
+            var requete = client.Cypher.Match("()-[cont:contient]->(c:Colis)").Where("c.ID = '" + id + "'").Delete("cont").ExecuteWithoutResultsAsync();
+            requete.Wait();
+            requete = client.Cypher.Match("()-[trans:transporte]->(c:Colis)").Where("c.ID = '" + id + "'").Delete("trans").ExecuteWithoutResultsAsync();
+            requete.Wait();
+        }
+
+        public void Charger(Camion C, List<Colis> listeColis)
+        {
+            foreach (Colis col in listeColis)
+            {
+                AjouterEmplacement(col, C);
+            }
+        }
+
+        public List<Colis> Selectionner(Destination D)
+        {
+            var colis = client.Cypher.Match("(c:Colis)", "(d:Destination)").Where("d.ID = '" + D.ID + "'").AndWhere("(d)-[:contient]->(c)").Return<Colis>("c").ResultsAsync;
+            colis.Wait();
+            return colis.Result.ToList();
+        }
+
+        public List<Colis> Selectionner(Camion cam)
+        {
+            var colis = client.Cypher.Match("(col:Colis)", "(cam:Camion)").Where("cam.ID = '" + cam.ID + "'").AndWhere("(cam)-[:transporte]->(col)").Return<Colis>("col").ResultsAsync;
+            colis.Wait();
+            return colis.Result.ToList();
         }
 
         /*

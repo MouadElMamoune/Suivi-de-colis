@@ -54,36 +54,36 @@ namespace Suivi_de_colis
                 {
                     if (compteur == 0)
                     {
-                        requete += "WHERE n.ID = '" + D["ID"] + "' ";
+                        requete += "WHERE d.ID = '" + D["ID"] + "' ";
                         compteur++;
                     }
                     else
                     {
-                        requete += "AND n.ID = '" + D["ID"] + "' ";
+                        requete += "AND d.ID = '" + D["ID"] + "' ";
                     }
                 }
                 if (D.ContainsKey("Adresse_postale"))
                 {
                     if (compteur == 0)
                     {
-                        requete += "WHERE n.Adresse_postale = '" + D["Adresse_postale"] + "' ";
+                        requete += "WHERE d.Adresse_postale = '" + D["Adresse_postale"] + "' ";
                         compteur++;
                     }
                     else
                     {
-                        requete += "AND n.Adresse_postale = '" + D["Adresse_postale"] + "' ";
+                        requete += "AND d.Adresse_postale = '" + D["Adresse_postale"] + "' ";
                     }
                 }
                 if (D.ContainsKey("Coordonees_GPS"))
                 {
                     if (compteur == 0)
                     {
-                        requete += "WHERE n.Coordonees_GPS = '" + D["Coordonees_GPS"] + "' ";
+                        requete += "WHERE d.Coordonees_GPS = '" + D["Coordonees_GPS"] + "' ";
                         compteur++;
                     }
                     else
                     {
-                        requete += "AND n.Coordonees_GPS = '" + D["Coordonees_GPS"] + "' ";
+                        requete += "AND d.Coordonees_GPS = '" + D["Coordonees_GPS"] + "' ";
                     }
                 }
             }

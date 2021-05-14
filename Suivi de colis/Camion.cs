@@ -18,7 +18,7 @@ namespace Suivi_de_colis
             float hauteur;
             float largeur;
             float poids_max;
-            public Camion(string id, string matricule, string marque, string modele, float poids, float consommation ,float longueur ,float hauteur, float largeur, float poids_max)
+            public Camion(string id, string matricule = "", string marque = "", string modele = "", float poids = 0, float consommation = 0, float longueur = 0, float hauteur = 0, float largeur = 0, float poids_max = 0)
             {
                 this.id = id;
                 this.matricule = matricule;
@@ -157,6 +157,32 @@ namespace Suivi_de_colis
                     poids_max = value;
                 }
             }
+        public float CalculerVolume()
+        {
+            return longueur * largeur * hauteur;
+        }
+
+        public bool VerifierCapacite(List<Colis> listeColis)
+        {
+            float somme_longueur = 0;
+            float somme_largeur = 0;
+            float somme_hauteur = 0;
+
+            foreach (Colis C in listeColis)
+            {
+                somme_longueur += C.Longueur;
+                somme_largeur += C.Largeur;
+                if (C.Fragilite)
+                {
+                    somme_hauteur += hauteur;
+                }
+                else
+                {
+                    somme_hauteur += C.Hauteur;
+                }
+            }
+            return CalculerVolume() > (somme_longueur * somme_largeur * somme_hauteur);
+        }
 
         
     }

@@ -16,7 +16,8 @@ namespace Suivi_de_colis
         static string uri = "bolt://localhost:7687";
         static string username = "neo4j";
         static string password = "1234";
-        public CamionDAO()
+
+        public UserDAO()
         {
             pilote = GraphDatabase.Driver(uri, AuthTokens.Basic(username, password), config => config.WithEncryptionLevel(EncryptionLevel.None));
             client = new BoltGraphClient(pilote);
@@ -25,7 +26,7 @@ namespace Suivi_de_colis
 
         public void Ajouter(User U)
         {
-                var res = client.Cypher.Create("(c:User {ID :'" + C.ID + "', Login : '" + U.Login + "', Password : '" + U.Password + "'})").ExecuteWithoutResultsAsync();
+                var res = client.Cypher.Create("(u:User {ID :'" + U.ID + "', Login : '" + U.Login + "', Password : '" + U.Password + "'})").ExecuteWithoutResultsAsync();
                 res.Wait();
         }
 

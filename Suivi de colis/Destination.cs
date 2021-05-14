@@ -11,7 +11,7 @@ namespace Suivi_de_colis
         string id;
         string adresse_postale;
         string coordonnees_GPS;
-        public Destination(string id ,string addresse_postale ,string coordonnees_GPS)
+        public Destination(string id ,string addresse_postale = "",string coordonnees_GPS = "")
         {
             this.id = id;
             this.adresse_postale = addresse_postale;
