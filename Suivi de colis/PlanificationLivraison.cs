@@ -97,7 +97,7 @@ namespace Suivi_de_colis
 
         private void ValiderPLbutton_Click(object sender, EventArgs e)
         {
-            if (TrajetPLdataGridView.Rows.Count != 0 || true)
+            if (TrajetPLdataGridView.Rows.Count != 0)
             {
                 if (!File.Exists(@"../../test.xml"))
                 {

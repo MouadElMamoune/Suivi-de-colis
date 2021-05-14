@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Suivi_de_colis
 {
@@ -18,6 +20,7 @@ namespace Suivi_de_colis
         int nbDestinations;
         string idCamion;
         string[] listeDestination;
+        List<string> listeDestinationPrise;
 
         public string[] ListeDestination { get => listeDestination; set => listeDestination = value; }
         internal List<string>[] ListeColisACharger { get => listeColisACharger; set => listeColisACharger = value; }
@@ -38,9 +41,31 @@ namespace Suivi_de_colis
             DestinationDAO DDAO = new DestinationDAO();
             List<Destination> listeDestinations;
             listeDestinations = DDAO.Selectionner();
+            XDocument doc;
+            if (File.Exists(@"../../test.xml"))
+            {
+                doc = XDocument.Load(@"../../test.xml");
+                var destinations = (from x in doc.Root.Elements("livraison").Elements("destination") select x).ToList();
+                if (destinations != null)
+                {
+                    listeDestinationPrise = new List<string>();
+                    foreach (var dest in destinations)
+                    {
+                        listeDestinationPrise.Add(dest.Attribute("adressePostale").Value);
+                    }
+                }
+            }
             foreach (Destination D in listeDestinations)
             {
-                DestinationCCcomboBox.Items.Add(D.Adresse_postale);
+                
+                if (listeDestinationPrise != null)
+                {
+                    if (!listeDestinationPrise.Contains(D.Adresse_postale))
+                    {
+                        DestinationCCcomboBox.Items.Add(D.Adresse_postale);
+                    }
+                }
+                
             }
             /*
             List<Colis> listeColis = null;
