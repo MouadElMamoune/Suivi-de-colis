@@ -8,96 +8,98 @@ namespace Suivi_de_colis
 {
     class Chauffeur
     {
-            string id;
-            string nom;
-            string prenom;
-            string date_embauche;
-            float salaire;
-            float note;
-            public Chauffeur(string id, string nom, string prenom, string date_embauche, float salaire, float note)
+        string id;
+        string nom;
+        string prenom;
+        string date_embauche;
+        float salaire;
+        float note;
+        public Chauffeur(string id, string nom, string prenom, string date_embauche, float salaire, float note)
+        {
+            this.id = id;
+            this.nom = nom;
+            this.prenom = prenom;
+            this.date_embauche = date_embauche;
+            this.salaire = salaire;
+            this.note = note;
+        }
+
+        public Chauffeur()
+        {
+
+        }
+
+        public string ID
+        {
+            get
             {
-                this.id = id;
-                this.nom = nom;
-                this.prenom = prenom;
-                this.date_embauche = date_embauche;
-                this.salaire = salaire;
-                this.note = note;
+                return id;
             }
 
-            public string ID
+            set
             {
-                get
-                {
-                    return id;
-                }
-
-                set
-                {
-                    id = value;
-                }
+                id = value;
             }
-            public string Nom
+        }
+        public string Nom
+        {
+            get
             {
-                get
-                {
-                    return nom;
-                }
-
-                set
-                {
-                    nom = value;
-                }
+                return nom;
             }
-            public string Prenom
+
+            set
             {
-                get
-                {
-                    return prenom;
-                }
-
-                set
-                {
-                    prenom = value;
-                }
+                nom = value;
             }
-            public string Date_embauche
+        }
+        public string Prenom
+        {
+            get
             {
-                get
-                {
-                    return date_embauche;
-                }
-
-                set
-                {
-                    date_embauche = value;
-                }
+                return prenom;
             }
-            public float Salaire
+
+            set
             {
-                get
-                {
-                    return salaire;
-                }
-
-                set
-                {
-                    salaire = value;
-                }
+                prenom = value;
             }
-            public float Note
+        }
+        public string Date_embauche
+        {
+            get
             {
-                get
-                {
-                    return note;
-                }
-
-                set
-                {
-                    note = value;
-                }
+                return date_embauche;
             }
-            
 
-        
+            set
+            {
+                date_embauche = value;
+            }
+        }
+        public float Salaire
+        {
+            get
+            {
+                return salaire;
+            }
+
+            set
+            {
+                salaire = value;
+            }
+        }
+        public float Note
+        {
+            get
+            {
+                return note;
+            }
+
+            set
+            {
+                note = value;
+            }
+        }     
     }
 }

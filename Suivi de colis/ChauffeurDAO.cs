@@ -127,11 +127,11 @@ namespace Suivi_de_colis
             chauffeur.Wait();
         }
 
-        /*
-        public void Modifier()
+
+        public void Modifier(Chauffeur C)
         {
-            var chauffeur = client.Cypher.Match("(n:" + "Chauffeur)").Set()
+            var chauffeur = client.Cypher.Match("(c:" + "Chauffeur)").Where("c.ID = '" + C.ID + "'").Set("c.Nom = '" + C.Nom + "'").Set("c.Prenom = '" + C.Prenom + "'").Set("c.Date_embauche = '" + C.Date_embauche + "'").Set("c.Salaire = '" + C.Salaire + "'").Set("c.Note = '" + C.Note + "'").ExecuteWithoutResultsAsync();
+            chauffeur.Wait();
         }
-        */
     }
 }

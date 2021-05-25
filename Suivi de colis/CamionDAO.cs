@@ -182,6 +182,25 @@ namespace Suivi_de_colis
             camion.Wait();
         }
 
+        public void AjouterEmplacement(Camion C, Destination S)
+        {
+            SupprimerEmplacement(C);
+            var requete = client.Cypher.Match("(c:Camion)", "(s:Destination)").Where("c.ID = '" + C.ID + "'").AndWhere("s.ID = '" + S.ID + "'").Create("(c)-[:se_trouve]->(s)").ExecuteWithoutResultsAsync();
+            requete.Wait();
+        }
+
+        public void SupprimerEmplacement(Camion C)
+        {
+            var requete = client.Cypher.Match("(c:Camion)-[emp:se_trouve]->()").Where("c.ID = '" + C.ID + "'").Delete("emp").ExecuteWithoutResultsAsync();
+            requete.Wait();
+        }
+
+        public void SupprimerEmplacement(string id)
+        {
+            var requete = client.Cypher.Match("(c:Camion)-[emp:se_trouve]->()").Where("c.ID = '" + id + "'").Delete("emp").ExecuteWithoutResultsAsync();
+            requete.Wait();
+        }
+
         /*
         public void Modifier()
         {

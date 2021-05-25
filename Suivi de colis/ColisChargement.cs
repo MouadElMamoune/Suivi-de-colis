@@ -65,7 +65,10 @@ namespace Suivi_de_colis
                         DestinationCCcomboBox.Items.Add(D.Adresse_postale);
                     }
                 }
-                
+                else
+                {
+                    DestinationCCcomboBox.Items.Add(D.Adresse_postale);
+                }
             }
             /*
             List<Colis> listeColis = null;

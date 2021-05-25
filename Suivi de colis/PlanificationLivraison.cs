@@ -110,7 +110,7 @@ namespace Suivi_de_colis
                 {
                     if (i-1 < nbDestinations)
                     {
-                        livraison.Add(new XElement("destination", new XAttribute("num", i), new XAttribute("adressePostale", destination), new XElement("camion"), new XElement("emplacement")));
+                        livraison.Add(new XElement("destination", new XAttribute("num", i), new XAttribute("adressePostale", destination), new XAttribute("atteint", 0), new XElement("camion"), new XElement("emplacement")));
                         var destCharger = (from x in livraison.Elements("destination") where x.Attribute("num").Value == i.ToString() select x).FirstOrDefault();
                         var destDecharger = (from x in livraison.Elements("destination") where x.Attribute("num").Value == i.ToString() select x).FirstOrDefault();
 

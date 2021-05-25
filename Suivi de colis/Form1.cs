@@ -28,5 +28,11 @@ namespace Suivi_de_colis
             ValidationDeplacement VD = new ValidationDeplacement();
             VD.ShowDialog();
         }
+
+        private void Gestionbutton_Click(object sender, EventArgs e)
+        {
+            Gestion G = new Gestion();
+            G.ShowDialog();
+        }
     }
 }

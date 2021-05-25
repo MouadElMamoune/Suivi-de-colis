@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <livraisons>
   <livraison idCamion="1" nbDestinations="2">
-    <destination num="1" adressePostale="Rue Moulay Driss">
+    <destination num="1" adressePostale="Rue Moulay Driss" atteint="0">
       <camion>
         <colis>C1</colis>
         <colis>C2</colis>
@@ -9,7 +9,7 @@
       </camion>
       <emplacement />
     </destination>
-    <destination num="2" adressePostale="Iberia">
+    <destination num="2" adressePostale="Marshane" atteint="0">
       <camion />
       <emplacement>
         <colis>C1</colis>
@@ -19,18 +19,18 @@
     </destination>
   </livraison>
   <livraison idCamion="2" nbDestinations="2">
-    <destination num="1" adressePostale="Hassnouna">
+    <destination num="1" adressePostale="Hassnouna" atteint="0">
       <camion>
-        <colis>C5</colis>
         <colis>C6</colis>
         <colis>C7</colis>
       </camion>
-      <emplacement />
-    </destination>
-    <destination num="2" adressePostale="Marshane">
-      <camion />
       <emplacement>
         <colis>C5</colis>
+      </emplacement>
+    </destination>
+    <destination num="2" adressePostale="Iberia" atteint="0">
+      <camion />
+      <emplacement>
         <colis>C6</colis>
         <colis>C7</colis>
       </emplacement>

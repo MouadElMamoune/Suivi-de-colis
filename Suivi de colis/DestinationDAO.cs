@@ -97,6 +97,13 @@ namespace Suivi_de_colis
             var camion = client.Cypher.Match("(d:" + "Destination)").Where("d.ID = '" + id + "'").Delete("d").ExecuteWithoutResultsAsync();
             camion.Wait();
         }
+
+        public Destination Selectionner(Camion C)
+        {
+            var dest = client.Cypher.Match("(d:Destination)", "(c:Camion)").Where("c.ID = '" + C.ID + "'").AndWhere("(c)-[:se_trouve]->(d)").Return<Destination>("d").ResultsAsync;
+            dest.Wait();
+            return dest.Result.First();
+        }
     }
 
 

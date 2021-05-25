@@ -184,6 +184,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion.Designer.cs">
+      <DependentUpon>Gestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionDesCamions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionDesCamions.Designer.cs">
+      <DependentUpon>GestionDesCamions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionDesChauffeurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionDesChauffeurs.Designer.cs">
+      <DependentUpon>GestionDesChauffeurs.cs</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="PlanificationLivraison.cs">
@@ -211,6 +229,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion.resx">
+      <DependentUpon>Gestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionDesCamions.resx">
+      <DependentUpon>GestionDesCamions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionDesChauffeurs.resx">
+      <DependentUpon>GestionDesChauffeurs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\Suivi_de_colis.ColisChargement.resources" />
     <EmbeddedResource Include="obj\Debug\Suivi_de_colis.PlanificationLivraison.resources" />
