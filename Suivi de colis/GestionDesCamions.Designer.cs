@@ -32,21 +32,21 @@ namespace Suivi_de_colis
             this.SupprimerGestionDesChauffeursbutton = new System.Windows.Forms.Button();
             this.ModifierGestionDesChauffeursbutton = new System.Windows.Forms.Button();
             this.AjouterGestionDesChauffeursbutton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            //this.label6 = new System.Windows.Forms.Label();
+            //this.label5 = new System.Windows.Forms.Label();
+            //this.label4 = new System.Windows.Forms.Label();
+            //this.label3 = new System.Windows.Forms.Label();
+            //this.label2 = new System.Windows.Forms.Label();
+            //this.label1 = new System.Windows.Forms.Label();
             this.PoidsGestionDesCamionstextBox = new System.Windows.Forms.TextBox();
             this.ModeleGestionDesCamionstextBox = new System.Windows.Forms.TextBox();
             this.MarqueGestionDesCamionstextBox = new System.Windows.Forms.TextBox();
             this.MatriculeGestionDesCamionstextBox = new System.Windows.Forms.TextBox();
             this.IDGestionDesCamionstextBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            //this.label7 = new System.Windows.Forms.Label();
+            //this.label8 = new System.Windows.Forms.Label();
+            //this.label9 = new System.Windows.Forms.Label();
+            //this.label10 = new System.Windows.Forms.Label();
             this.PoidsMaxtextBox = new System.Windows.Forms.TextBox();
             this.LargeurtextBox = new System.Windows.Forms.TextBox();
             this.HauteurtextBox = new System.Windows.Forms.TextBox();
@@ -86,7 +86,7 @@ namespace Suivi_de_colis
             this.AjouterGestionDesChauffeursbutton.TabIndex = 27;
             this.AjouterGestionDesChauffeursbutton.Text = "Ajouter";
             this.AjouterGestionDesChauffeursbutton.UseVisualStyleBackColor = true;
-            // 
+            /* 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -152,7 +152,7 @@ namespace Suivi_de_colis
             this.label1.Size = new System.Drawing.Size(42, 31);
             this.label1.TabIndex = 20;
             this.label1.Text = "ID";
-            // 
+            *// 
             // PoidsGestionDesCamionstextBox
             // 
             this.PoidsGestionDesCamionstextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -197,7 +197,7 @@ namespace Suivi_de_colis
             this.IDGestionDesCamionstextBox.Name = "IDGestionDesCamionstextBox";
             this.IDGestionDesCamionstextBox.Size = new System.Drawing.Size(269, 37);
             this.IDGestionDesCamionstextBox.TabIndex = 15;
-            // 
+            /* 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -242,7 +242,7 @@ namespace Suivi_de_colis
             this.label10.Size = new System.Drawing.Size(399, 31);
             this.label10.TabIndex = 34;
             this.label10.Text = "Longueur de sa caisse en mètre";
-            // 
+            *// 
             // PoidsMaxtextBox
             // 
             this.PoidsMaxtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -294,10 +294,10 @@ namespace Suivi_de_colis
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.ConsommationTextBox);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
+            //this.Controls.Add(this.label7);
+            //this.Controls.Add(this.label8);
+            //this.Controls.Add(this.label9);
+            //this.Controls.Add(this.label10);
             this.Controls.Add(this.PoidsMaxtextBox);
             this.Controls.Add(this.LargeurtextBox);
             this.Controls.Add(this.HauteurtextBox);
@@ -305,12 +305,12 @@ namespace Suivi_de_colis
             this.Controls.Add(this.SupprimerGestionDesChauffeursbutton);
             this.Controls.Add(this.ModifierGestionDesChauffeursbutton);
             this.Controls.Add(this.AjouterGestionDesChauffeursbutton);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            //this.Controls.Add(this.label6);
+            //this.Controls.Add(this.label5);
+            //this.Controls.Add(this.label4);
+            //this.Controls.Add(this.label3);
+            //this.Controls.Add(this.label2);
+            //this.Controls.Add(this.label1);
             this.Controls.Add(this.PoidsGestionDesCamionstextBox);
             this.Controls.Add(this.ModeleGestionDesCamionstextBox);
             this.Controls.Add(this.MarqueGestionDesCamionstextBox);
@@ -330,21 +330,21 @@ namespace Suivi_de_colis
         private System.Windows.Forms.Button SupprimerGestionDesChauffeursbutton;
         private System.Windows.Forms.Button ModifierGestionDesChauffeursbutton;
         private System.Windows.Forms.Button AjouterGestionDesChauffeursbutton;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        //private System.Windows.Forms.Label label6;
+        //private System.Windows.Forms.Label label5;
+        //private System.Windows.Forms.Label label4;
+        //private System.Windows.Forms.Label label3;
+        //private System.Windows.Forms.Label label2;
+        //private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox PoidsGestionDesCamionstextBox;
         private System.Windows.Forms.TextBox ModeleGestionDesCamionstextBox;
         private System.Windows.Forms.TextBox MarqueGestionDesCamionstextBox;
         private System.Windows.Forms.TextBox MatriculeGestionDesCamionstextBox;
         private System.Windows.Forms.TextBox IDGestionDesCamionstextBox;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        //private System.Windows.Forms.Label label7;
+        //private System.Windows.Forms.Label label8;
+        //private System.Windows.Forms.Label label9;
+        //private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox PoidsMaxtextBox;
         private System.Windows.Forms.TextBox LargeurtextBox;
         private System.Windows.Forms.TextBox HauteurtextBox;
