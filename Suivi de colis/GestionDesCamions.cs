@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +15,16 @@ namespace Suivi_de_colis
         public GestionDesCamions()
         {
             InitializeComponent();
+        }
+
+        private void GestionDesCamions_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
