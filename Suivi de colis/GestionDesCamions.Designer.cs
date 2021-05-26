@@ -319,7 +319,7 @@ namespace Suivi_de_colis
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GestionDesCamions";
             this.Text = "GestionDesCamions";
-            this.Load += new System.EventHandler(this.GestionDesCamions_Load);
+            //this.Load += new System.EventHandler(this.GestionDesCamions_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
