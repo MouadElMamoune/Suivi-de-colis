@@ -39,9 +39,10 @@ namespace Suivi_de_colis
             // GestionDesCamionsbutton
             // 
             this.GestionDesCamionsbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GestionDesCamionsbutton.Location = new System.Drawing.Point(237, 153);
+            this.GestionDesCamionsbutton.Location = new System.Drawing.Point(316, 188);
+            this.GestionDesCamionsbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GestionDesCamionsbutton.Name = "GestionDesCamionsbutton";
-            this.GestionDesCamionsbutton.Size = new System.Drawing.Size(271, 36);
+            this.GestionDesCamionsbutton.Size = new System.Drawing.Size(361, 44);
             this.GestionDesCamionsbutton.TabIndex = 8;
             this.GestionDesCamionsbutton.Text = "Gestion des camions";
             this.GestionDesCamionsbutton.UseVisualStyleBackColor = true;
@@ -50,19 +51,22 @@ namespace Suivi_de_colis
             // GestionDesColisbutton
             // 
             this.GestionDesColisbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GestionDesColisbutton.Location = new System.Drawing.Point(237, 263);
+            this.GestionDesColisbutton.Location = new System.Drawing.Point(316, 324);
+            this.GestionDesColisbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GestionDesColisbutton.Name = "GestionDesColisbutton";
-            this.GestionDesColisbutton.Size = new System.Drawing.Size(271, 36);
+            this.GestionDesColisbutton.Size = new System.Drawing.Size(361, 44);
             this.GestionDesColisbutton.TabIndex = 9;
             this.GestionDesColisbutton.Text = "Gestion des colis";
             this.GestionDesColisbutton.UseVisualStyleBackColor = true;
+            this.GestionDesColisbutton.Click += new System.EventHandler(this.GestionDesColisbutton_Click);
             // 
             // GestionDesChauffeursbutton
             // 
             this.GestionDesChauffeursbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GestionDesChauffeursbutton.Location = new System.Drawing.Point(237, 98);
+            this.GestionDesChauffeursbutton.Location = new System.Drawing.Point(316, 121);
+            this.GestionDesChauffeursbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GestionDesChauffeursbutton.Name = "GestionDesChauffeursbutton";
-            this.GestionDesChauffeursbutton.Size = new System.Drawing.Size(271, 36);
+            this.GestionDesChauffeursbutton.Size = new System.Drawing.Size(361, 44);
             this.GestionDesChauffeursbutton.TabIndex = 10;
             this.GestionDesChauffeursbutton.Text = "Gestion des chauffeurs";
             this.GestionDesChauffeursbutton.UseVisualStyleBackColor = true;
@@ -71,33 +75,38 @@ namespace Suivi_de_colis
             // GestionDesDestinationsbutton
             // 
             this.GestionDesDestinationsbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GestionDesDestinationsbutton.Location = new System.Drawing.Point(237, 208);
+            this.GestionDesDestinationsbutton.Location = new System.Drawing.Point(316, 256);
+            this.GestionDesDestinationsbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GestionDesDestinationsbutton.Name = "GestionDesDestinationsbutton";
-            this.GestionDesDestinationsbutton.Size = new System.Drawing.Size(271, 36);
+            this.GestionDesDestinationsbutton.Size = new System.Drawing.Size(361, 44);
             this.GestionDesDestinationsbutton.TabIndex = 11;
             this.GestionDesDestinationsbutton.Text = "Gestion des destinations";
             this.GestionDesDestinationsbutton.UseVisualStyleBackColor = true;
+            this.GestionDesDestinationsbutton.Click += new System.EventHandler(this.GestionDesDestinationsbutton_Click);
             // 
             // GestionDesClientsbutton
             // 
             this.GestionDesClientsbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GestionDesClientsbutton.Location = new System.Drawing.Point(237, 323);
+            this.GestionDesClientsbutton.Location = new System.Drawing.Point(316, 398);
+            this.GestionDesClientsbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GestionDesClientsbutton.Name = "GestionDesClientsbutton";
-            this.GestionDesClientsbutton.Size = new System.Drawing.Size(271, 36);
+            this.GestionDesClientsbutton.Size = new System.Drawing.Size(361, 44);
             this.GestionDesClientsbutton.TabIndex = 12;
             this.GestionDesClientsbutton.Text = "Gestion des clients";
             this.GestionDesClientsbutton.UseVisualStyleBackColor = true;
+            this.GestionDesClientsbutton.Click += new System.EventHandler(this.GestionDesClientsbutton_Click);
             // 
             // Gestion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.GestionDesClientsbutton);
             this.Controls.Add(this.GestionDesDestinationsbutton);
             this.Controls.Add(this.GestionDesChauffeursbutton);
             this.Controls.Add(this.GestionDesColisbutton);
             this.Controls.Add(this.GestionDesCamionsbutton);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Gestion";
             this.Text = "Gestion";
             this.ResumeLayout(false);

@@ -28,5 +28,20 @@ namespace Suivi_de_colis
             GestionDesCamions G = new GestionDesCamions();
             G.ShowDialog();
         }
+
+        private void GestionDesColisbutton_Click(object sender, EventArgs e)
+        {
+            new GestionDesColis().ShowDialog();
+        }
+
+        private void GestionDesClientsbutton_Click(object sender, EventArgs e)
+        {
+            new GestionDesClients().ShowDialog();
+        }
+
+        private void GestionDesDestinationsbutton_Click(object sender, EventArgs e)
+        {
+            new GestionDesDestinations().ShowDialog();
+        }
     }
 }
