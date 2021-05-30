@@ -16,24 +16,24 @@ namespace Suivi_de_colis
         {
             InitializeComponent();
         }
-        private void AjouterGestionDesColisbutton_Click(object sender, EventArgs e)
+         private void AjouterGestionDesClientsbutton_Click(object sender, EventArgs e)
         {   
-            if (IDGestionDesColistextBox.Text != "") 
+            if (IDGestionDesClientstextBox.Text != "") 
             {
-                ColisDAO CDAO = new ColisDAO();
-                Colis C = new Colis(IDGestionDesColistextBox.Text, float.Parse(LongeurGestionDesColistextBox.Text), float.parse(HauteurGestionDesColistextBox.Text), float.parse(LargeurGestionDesColisTxtBox.Text), checkBox1.Checked);
+                ClientDAO CDAO = new ClientDAO();
+                Client C = new Client(IDGestionDesCamionstextBox.Text, NomGestionDesClientstextBox.Text, Convert.ToInt32(nombre_livraisonsGestionDesClientsnumericUpDown.Value));
                 CDAO.Ajouter(C);
             }
         }
 
-        private void ModifierGestionDesColisbutton_Click(object sender, EventArgs e)
+        private void ModifierGestionDesClientsbutton_Click(object sender, EventArgs e)
         {
-            if (IDGestionDesColistextBox.Text != "")
+            if (IDGestionDesClientstextBox.Text != "")
             {
-                ColisDAO CDAO = new ColisDAO();
-                if (CDAO.Selectionner(IDGestionDesColistextBox.Text) != null)
+                ClientDAO CDAO = new ClientDAO();
+                if (CDAO.Selectionner(IDGestionDesClientstextBox.Text) != null)
                 {
-                    Colis C = new Colis(IDGestionDesColistextBox.Text, float.Parse(LongeurGestionDesColistextBox.Text), float.parse(HauteurGestionDesColistextBox.Text), float.parse(LargeurGestionDesColisTxtBox.Text), checkBox1.Checked);
+                    Client C = new Client(IDGestionDesCamionstextBox.Text, NomGestionDesClientstextBox.Text, Convert.ToInt32(nombre_livraisonsGestionDesClientsnumericUpDown.Value));
                     CDAO.Modifier(C);
                 }
             }
