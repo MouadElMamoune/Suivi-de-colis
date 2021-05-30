@@ -77,6 +77,7 @@ namespace Suivi_de_colis
             this.ModifierGestionDesChauffeursbutton.TabIndex = 28;
             this.ModifierGestionDesChauffeursbutton.Text = "Modifier";
             this.ModifierGestionDesChauffeursbutton.UseVisualStyleBackColor = true;
+            this.ModifierGestionDesChauffeursbutton.Click += new System.EventHandler(this.ModifierGestionDesChauffeursbutton_Click);
             // 
             // AjouterGestionDesChauffeursbutton
             // 
@@ -88,7 +89,7 @@ namespace Suivi_de_colis
             this.AjouterGestionDesChauffeursbutton.TabIndex = 27;
             this.AjouterGestionDesChauffeursbutton.Text = "Ajouter";
             this.AjouterGestionDesChauffeursbutton.UseVisualStyleBackColor = true;
-             
+            this.AjouterGestionDesChauffeursbutton.Click += new System.EventHandler(this.AjouterGestionDesChauffeursbutton_Click);
             // PoidsGestionDesCamionstextBox
             // 
             this.PoidsGestionDesCamionstextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
