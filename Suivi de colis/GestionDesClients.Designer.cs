@@ -62,6 +62,7 @@ namespace Suivi_de_colis
             this.ModifierGestionDesClientsbutton.TabIndex = 28;
             this.ModifierGestionDesClientsbutton.Text = "Modifier";
             this.ModifierGestionDesClientsbutton.UseVisualStyleBackColor = true;
+            this.ModifierGestionDesClientsbutton.Click += new System.EventHandler(this.ModifierGestionDesClientsbutton_Click);
             // 
             // AjouterGestionDesClientsbutton
             // 
@@ -73,6 +74,7 @@ namespace Suivi_de_colis
             this.AjouterGestionDesClientsbutton.TabIndex = 27;
             this.AjouterGestionDesClientsbutton.Text = "Ajouter";
             this.AjouterGestionDesClientsbutton.UseVisualStyleBackColor = true;
+            this.AjouterGestionDesClientsbutton.Click += new System.EventHandler(this.AjouterGestionDesClientsbutton_Click);
             // 
             // label6
             // 
