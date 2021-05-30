@@ -61,6 +61,7 @@ namespace Suivi_de_colis
             this.ModifierGestionDesColisbutton.TabIndex = 39;
             this.ModifierGestionDesColisbutton.Text = "Modifier";
             this.ModifierGestionDesColisbutton.UseVisualStyleBackColor = true;
+            this.ModifierGestionDesColisbutton.Click += new System.EventHandler(this.ModifierGestionDesColisbutton_Click);
             // 
             // AjouterGestionDesColisbutton
             // 
@@ -72,6 +73,7 @@ namespace Suivi_de_colis
             this.AjouterGestionDesColisbutton.TabIndex = 38;
             this.AjouterGestionDesColisbutton.Text = "Ajouter";
             this.AjouterGestionDesColisbutton.UseVisualStyleBackColor = true;
+            this.ModifierGestionDesColisbutton.Click += new System.EventHandler(this.ModifierGestionDesColisbutton_Click);
             // 
             // label3
             // 
