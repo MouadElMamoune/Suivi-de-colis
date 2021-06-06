@@ -154,6 +154,40 @@ namespace Suivi_de_colis
             }
         }
 
+        public void Charger(Destination D, List<Colis> listeColis)
+        {
+            foreach (Colis col in listeColis)
+            {
+                AjouterEmplacement(col, D);
+            }
+        }
+
+        public void Vider(Camion C)
+        {
+            List<Colis> listeColis;
+            listeColis = Selectionner(C);
+            if (listeColis != null)
+            {
+                foreach (Colis colis in listeColis)
+                {
+                    SupprimerEmplacement(colis);
+                }
+            }
+        }
+
+        public void Vider(Destination D)
+        {
+            List<Colis> listeColis;
+            listeColis = Selectionner(D);
+            if (listeColis != null)
+            {
+                foreach (Colis colis in listeColis)
+                {
+                    SupprimerEmplacement(colis);
+                }
+            }
+        }
+
         public List<Colis> Selectionner(Destination D)
         {
             var colis = client.Cypher.Match("(c:Colis)", "(d:Destination)").Where("d.ID = '" + D.ID + "'").AndWhere("(d)-[:contient]->(c)").Return<Colis>("c").ResultsAsync;

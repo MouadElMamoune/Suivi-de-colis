@@ -187,6 +187,7 @@ namespace Suivi_de_colis
             this.SupprimerGestionDesChauffeursbutton.TabIndex = 14;
             this.SupprimerGestionDesChauffeursbutton.Text = "Supprimer";
             this.SupprimerGestionDesChauffeursbutton.UseVisualStyleBackColor = true;
+            this.SupprimerGestionDesChauffeursbutton.Click += new System.EventHandler(this.SupprimerGestionDesChauffeursbutton_Click);
             // 
             // GestionDesChauffeurs
             // 

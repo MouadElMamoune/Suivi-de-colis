@@ -29,11 +29,25 @@ namespace Suivi_de_colis
             res.Wait();
         }
 
-        public Destination Selectionner(string id)
+        public Destination SelectionnerId(string id)
         {
             Destination D = null;
 
             var camion = client.Cypher.Match("(d:Destination)").Where("d.ID = '" + id + "'").Return<Destination>("d").ResultsAsync;
+            camion.Wait();
+            foreach (var x in camion.Result.ToList())
+            {
+                D = new Destination(x.ID, x.Adresse_postale, x.Coordonnees_GPS);
+                return D;
+            }
+            return D;
+        }
+
+        public Destination SelectionnerAdressePostale(string adresse)
+        {
+            Destination D = null;
+
+            var camion = client.Cypher.Match("(d:Destination)").Where("d.Adresse_postale = '" + adresse + "'").Return<Destination>("d").ResultsAsync;
             camion.Wait();
             foreach (var x in camion.Result.ToList())
             {
@@ -102,7 +116,7 @@ namespace Suivi_de_colis
         {
             var dest = client.Cypher.Match("(d:Destination)", "(c:Camion)").Where("c.ID = '" + C.ID + "'").AndWhere("(c)-[:se_trouve]->(d)").Return<Destination>("d").ResultsAsync;
             dest.Wait();
-            return dest.Result.First();
+            return dest.Result.FirstOrDefault();
         }
     }
 

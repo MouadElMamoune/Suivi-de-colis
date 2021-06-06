@@ -201,11 +201,10 @@ namespace Suivi_de_colis
             requete.Wait();
         }
 
-        /*
-        public void Modifier()
+        public void Modifier(Camion C)
         {
-            var camion = client.Cypher.Match("(n:" + "Camion)").Set()
+            var camion = client.Cypher.Match("(c:" + "Camion)").Where("c.ID = '" + C.ID + "'").Set("c.Matricule = '" + C.Matricule + "'").Set("c.Marque = '" + C.Marque + "'").Set("c.Modele = '" + C.Modele + "'").Set("c.Poids = '" + C.Poids + "'").Set("c.Consommation = '" + C.Consommation + "'").Set("c.Longueur = '" + C.Longueur + "'").Set("c.Hauteur = '" + C.Hauteur + "'").Set("c.Largeur = '" + C.Largeur + "'").Set("c.Poids_max = '" + C.Poids_max + "'").ExecuteWithoutResultsAsync();
+            camion.Wait();
         }
-        */
     }
 }

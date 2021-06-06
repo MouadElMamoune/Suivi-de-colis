@@ -59,5 +59,18 @@ namespace Suivi_de_colis
                 }
             }
         }
+
+        private void SupprimerGestionDesChauffeursbutton_Click(object sender, EventArgs e)
+        {
+            if (IDGestionDesChauffeurstextBox.Text != "")
+            {
+                ChauffeurDAO CDAO = new ChauffeurDAO();
+                if (CDAO.Selectionner(IDGestionDesChauffeurstextBox.Text) != null)
+                {
+                    CDAO.Supprimer(IDGestionDesChauffeurstextBox.Text);
+                }
+            }
+
+        }
     }
 }

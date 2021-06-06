@@ -27,6 +27,8 @@ namespace Suivi_de_colis
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+ 
+        /*
         private void InitializeComponent()
         {
             this.SupprimerGestionDesClientsbutton = new System.Windows.Forms.Button();
@@ -158,7 +160,7 @@ namespace Suivi_de_colis
             this.PerformLayout();
 
         }
-
+        */
         #endregion
 
         private System.Windows.Forms.Button SupprimerGestionDesClientsbutton;

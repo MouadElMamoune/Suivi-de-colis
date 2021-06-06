@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <livraisons>
   <livraison idCamion="1" nbDestinations="2">
-    <destination num="1" adressePostale="Rue Moulay Driss" atteint="0">
+    <destination num="1" adressePostale="Rue Moulay Driss" atteint="1">
       <camion>
         <colis>C1</colis>
         <colis>C2</colis>
@@ -9,7 +9,7 @@
       </camion>
       <emplacement />
     </destination>
-    <destination num="2" adressePostale="Marshane" atteint="0">
+    <destination num="2" adressePostale="Marshane" atteint="1">
       <camion />
       <emplacement>
         <colis>C1</colis>

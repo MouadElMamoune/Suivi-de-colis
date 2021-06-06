@@ -22,7 +22,7 @@ namespace Suivi_de_colis
             if (IDGestionDesColistextBox.Text != "") 
             {
                 ColisDAO CDAO = new ColisDAO();
-                Colis C = new Colis(IDGestionDesColistextBox.Text, float.Parse(LongeurGestionDesColistextBox.Text), float.parse(HauteurGestionDesColistextBox.Text), float.parse(LargeurGestionDesColisTxtBox.Text), checkBox1.Checked);
+                Colis C = new Colis(IDGestionDesColistextBox.Text, float.Parse(LongeurGestionDesColistextBox.Text), float.Parse(HauteurGestionDesColistextBox.Text), float.Parse(LargeurGestionDesColisTxtBox.Text), checkBox1.Checked);
                 CDAO.Ajouter(C);
             }
         }
@@ -34,10 +34,30 @@ namespace Suivi_de_colis
                 ColisDAO CDAO = new ColisDAO();
                 if (CDAO.Selectionner(IDGestionDesColistextBox.Text) != null)
                 {
-                    Colis C = new Colis(IDGestionDesColistextBox.Text, float.Parse(LongeurGestionDesColistextBox.Text), float.parse(HauteurGestionDesColistextBox.Text), float.parse(LargeurGestionDesColisTxtBox.Text), checkBox1.Checked);
-                    CDAO.Modifier(C);
+                    Colis C = new Colis(IDGestionDesColistextBox.Text, float.Parse(LongeurGestionDesColistextBox.Text), float.Parse(HauteurGestionDesColistextBox.Text), float.Parse(LargeurGestionDesColisTxtBox.Text), checkBox1.Checked);
+                    //CDAO.Modifier(C);
                 }
             }
+        }
+
+        /*
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // GestionDesColis
+            // 
+            this.ClientSize = new System.Drawing.Size(292, 273);
+            this.Name = "GestionDesColis";
+            this.Load += new System.EventHandler(this.GestionDesColis_Load);
+            this.ResumeLayout(false);
+
+        }
+        */
+
+        private void GestionDesColis_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

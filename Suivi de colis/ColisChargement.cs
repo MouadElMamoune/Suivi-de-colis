@@ -128,6 +128,23 @@ namespace Suivi_de_colis
                 {
                     listeIds.Add(colis);
                 }
+                CamionDAO CDAO = new CamionDAO();
+                ColisDAO COLDAO = new ColisDAO();
+                List<Colis> listeColis = new List<Colis>();
+                Camion C;
+                foreach (string id in listeIds)
+                {
+                    listeColis.Add(COLDAO.Selectionner(id));
+                }
+                C = CDAO.Selectionner(idCamion);
+                if (C.VerifierCapacite(listeColis) == false || C.VerifierPoids(listeColis) == false)
+                {
+                    SuivantCCbutton.Enabled = false;
+                }
+                else
+                {
+                    SuivantCCbutton.Enabled = true;
+                }
                 if (Enumerable.SequenceEqual(listeColisADecharger[indice - 1], listeIds))
                 {
                     DestinationCCcomboBox.Enabled = true;
@@ -176,6 +193,23 @@ namespace Suivi_de_colis
                 foreach (string colis in ColisCCDechargercheckedListBox.Items)
                 {
                     listeIds.Add(colis);
+                }
+                CamionDAO CDAO = new CamionDAO();
+                ColisDAO COLDAO = new ColisDAO();
+                List<Colis> listeColis = new List<Colis>();
+                Camion C;
+                foreach (string id in listeIds)
+                {
+                    listeColis.Add(COLDAO.Selectionner(id));
+                }
+                C = CDAO.Selectionner(idCamion);
+                if (C.VerifierCapacite(listeColis) == false || C.VerifierPoids(listeColis) == false)
+                {
+                    SuivantCCbutton.Enabled = false;
+                }
+                else
+                {
+                    SuivantCCbutton.Enabled = true;
                 }
                 if (Enumerable.SequenceEqual(listeColisADecharger[indice - 1], listeIds))
                 {

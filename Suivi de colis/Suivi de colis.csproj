@@ -202,6 +202,18 @@
     <Compile Include="GestionDesChauffeurs.Designer.cs">
       <DependentUpon>GestionDesChauffeurs.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionDesClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionDesClients.Designer.cs" />
+    <Compile Include="GestionDesColis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionDesColis.Designer.cs" />
+    <Compile Include="GestionDesDestinations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionDesDestinations.Designer.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="PlanificationLivraison.cs">
@@ -239,6 +251,9 @@
     <EmbeddedResource Include="GestionDesChauffeurs.resx">
       <DependentUpon>GestionDesChauffeurs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionDesClients.resx" />
+    <EmbeddedResource Include="GestionDesColis.resx" />
+    <EmbeddedResource Include="GestionDesDestinations.resx" />
     <EmbeddedResource Include="obj\Debug\Suivi_de_colis.ColisChargement.resources" />
     <EmbeddedResource Include="obj\Debug\Suivi_de_colis.PlanificationLivraison.resources" />
     <EmbeddedResource Include="obj\Debug\Suivi_de_colis.Properties.Resources.resources" />

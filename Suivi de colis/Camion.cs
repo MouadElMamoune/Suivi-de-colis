@@ -184,6 +184,18 @@ namespace Suivi_de_colis
             return CalculerVolume() > (somme_longueur * somme_largeur * somme_hauteur);
         }
 
-        
+        public bool VerifierPoids(List<Colis> listeColis)
+        {
+            float somme_poids = 0;
+
+
+            foreach (Colis C in listeColis)
+            {
+                somme_poids += C.Poids;
+            }
+            return poids_max > somme_poids;
+        }
+
+
     }
 }

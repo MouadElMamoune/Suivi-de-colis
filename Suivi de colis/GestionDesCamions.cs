@@ -40,7 +40,7 @@ namespace Suivi_de_colis
 
         private void ModifierGestionDesChauffeursbutton_Click(object sender, EventArgs e)
         {
-            if (IDGestionDesCamionstextBox.Text != "")
+            if (IDGestionDesCamionstextBox.Text != "" && MatriculeGestionDesCamionstextBox.Text != "" && MarqueGestionDesCamionstextBox.Text != "" && ModeleGestionDesCamionstextBox.Text != "" && PoidsGestionDesCamionstextBox.Text != "" && ConsommationTextBox.Text != "" && LongueurtextBox.Text != "" && HauteurtextBox.Text != "" && LargeurtextBox.Text != "" && PoidsMaxtextBox.Text != "")
             {
                 CamionDAO CDAO = new CamionDAO();
                 if (CDAO.Selectionner(IDGestionDesCamionstextBox.Text) != null)
@@ -60,6 +60,19 @@ namespace Suivi_de_colis
                     CDAO.Modifier(C);
                 }
             }
+        }
+
+        private void SupprimerGestionDesChauffeursbutton_Click(object sender, EventArgs e)
+        {
+            if (IDGestionDesCamionstextBox.Text != "")
+            {
+                CamionDAO CDAO = new CamionDAO();
+                if (CDAO.Selectionner(IDGestionDesCamionstextBox.Text) != null)
+                {
+                    CDAO.Supprimer(IDGestionDesCamionstextBox.Text);
+                }
+            }
+
         }
     }
 }

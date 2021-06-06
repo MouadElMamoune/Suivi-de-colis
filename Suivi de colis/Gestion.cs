@@ -36,7 +36,7 @@ namespace Suivi_de_colis
 
         private void GestionDesClientsbutton_Click(object sender, EventArgs e)
         {
-            new GestionDesClients().ShowDialog();
+            //new GestionDesClients().ShowDialog();
         }
 
         private void GestionDesDestinationsbutton_Click(object sender, EventArgs e)
