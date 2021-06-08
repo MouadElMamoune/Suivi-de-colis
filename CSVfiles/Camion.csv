@@ -4,3 +4,4 @@ id,matricule,marque,modele,poids,consommation,longueur,hauteur,largeur,poids_max
 3,12347,Citroën,423,15000,800,10,9,5,60000
 4,12348,Renault,823,17000,780,15,7,4,62000
 5,12349,Ford,173,12000,900,13,8,7,67000
+6,6666,DACIA,100,9000,310,14,15,8,39000
